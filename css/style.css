@@ -1,0 +1,546 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --delta-azul-escuro: #071a3d;
+    --delta-azul-profundo: #031027;
+    --delta-azul-medio: #102b63;
+    --delta-laranja: #ff6a00;
+    --delta-laranja-forte: #ff4d00;
+    --delta-laranja-claro: #ff9f1c;
+    --delta-texto: #0b1733;
+    --delta-texto-suave: #657086;
+    --delta-linha: #dbe2f0;
+    --delta-fundo: #f5f7fb;
+    --delta-branco: #ffffff;
+    --delta-sombra: 0 18px 55px rgba(7, 26, 61, 0.18);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: "Inter", Arial, sans-serif;
+    color: var(--delta-texto);
+    background: var(--delta-fundo);
+}
+
+body.delta-menu-aberto {
+    overflow: hidden;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+.header-site {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px clamp(20px, 5vw, 72px);
+    color: var(--delta-branco);
+    transition: background 0.25s ease, box-shadow 0.25s ease, color 0.25s ease;
+}
+
+.header-site.header-rolado,
+.header-site.header-menu-ativo {
+    color: var(--delta-azul-escuro);
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 10px 35px rgba(7, 26, 61, 0.15);
+    backdrop-filter: blur(16px);
+}
+
+.header-marca {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 800;
+}
+
+.header-marca-selo {
+    display: grid;
+    width: 42px;
+    height: 42px;
+    place-items: center;
+    border-radius: 8px;
+    color: var(--delta-branco);
+    background: var(--delta-laranja);
+}
+
+.header-navegacao {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    font-weight: 700;
+}
+
+.header-navegacao a {
+    opacity: 0.9;
+}
+
+.header-navegacao a:hover {
+    opacity: 1;
+    color: var(--delta-laranja);
+}
+
+.header-botao-menu {
+    display: none;
+    width: 44px;
+    height: 44px;
+    border: 1px solid currentColor;
+    border-radius: 8px;
+    color: inherit;
+    background: transparent;
+}
+
+.header-botao-menu span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    margin: 4px auto;
+    background: currentColor;
+}
+
+.delta-hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(320px, 430px);
+    gap: 42px;
+    align-items: end;
+    padding: 150px clamp(20px, 5vw, 72px) 54px;
+    color: var(--delta-branco);
+    background:
+        linear-gradient(90deg, rgba(3, 16, 39, 0.92), rgba(7, 26, 61, 0.7), rgba(255, 106, 0, 0.18)),
+        url("https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1800&q=80") center/cover;
+}
+
+.delta-hero-conteudo {
+    max-width: 760px;
+    padding-bottom: 38px;
+}
+
+.delta-etiqueta {
+    margin: 0 0 12px;
+    color: var(--delta-laranja-claro);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+p {
+    margin-top: 0;
+}
+
+h1 {
+    max-width: 720px;
+    margin-bottom: 22px;
+    font-size: clamp(2.7rem, 6vw, 5.8rem);
+    line-height: 0.95;
+    letter-spacing: 0;
+}
+
+h2 {
+    margin-bottom: 14px;
+    font-size: clamp(2rem, 4vw, 3.6rem);
+    line-height: 1.04;
+    letter-spacing: 0;
+}
+
+h3 {
+    font-size: 1.18rem;
+}
+
+.delta-hero-texto {
+    max-width: 620px;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 1.12rem;
+    line-height: 1.7;
+}
+
+.delta-hero-acoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 30px;
+}
+
+.delta-botao {
+    min-height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-radius: 8px;
+    padding: 0 22px;
+    cursor: pointer;
+    font-weight: 800;
+}
+
+.delta-botao-principal {
+    color: var(--delta-branco);
+    background: var(--delta-laranja);
+}
+
+.delta-botao-principal:hover {
+    background: var(--delta-laranja-forte);
+}
+
+.delta-botao-secundario {
+    color: var(--delta-branco);
+    border: 1px solid rgba(255, 255, 255, 0.54);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.delta-busca-painel {
+    display: grid;
+    gap: 16px;
+    padding: 24px;
+    border-radius: 8px;
+    color: var(--delta-texto);
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: var(--delta-sombra);
+}
+
+label {
+    display: grid;
+    gap: 8px;
+    color: var(--delta-texto);
+    font-size: 0.88rem;
+    font-weight: 800;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    min-height: 48px;
+    border: 1px solid var(--delta-linha);
+    border-radius: 8px;
+    padding: 0 14px;
+    color: var(--delta-texto);
+    background: var(--delta-branco);
+    outline: none;
+}
+
+textarea {
+    min-height: 112px;
+    padding-top: 13px;
+    resize: vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--delta-laranja);
+    box-shadow: 0 0 0 3px rgba(255, 106, 0, 0.2);
+}
+
+.delta-numeros {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--delta-linha);
+}
+
+.delta-numeros div {
+    padding: 34px clamp(20px, 4vw, 56px);
+    background: var(--delta-branco);
+}
+
+.delta-numeros strong {
+    display: block;
+    margin-bottom: 4px;
+    color: var(--delta-azul-escuro);
+    font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.delta-numeros span {
+    color: var(--delta-texto-suave);
+    font-weight: 700;
+}
+
+.delta-secao {
+    padding: 92px clamp(20px, 5vw, 72px);
+}
+
+.delta-secao-cabecalho {
+    max-width: 720px;
+    margin-bottom: 34px;
+}
+
+.delta-secao-cabecalho p:last-child {
+    color: var(--delta-texto-suave);
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+.delta-imoveis-grade,
+.delta-servicos-grade {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.delta-imovel-card {
+    overflow: hidden;
+    border: 1px solid var(--delta-linha);
+    border-radius: 8px;
+    background: var(--delta-branco);
+    box-shadow: 0 12px 32px rgba(7, 26, 61, 0.1);
+}
+
+.delta-imovel-card img {
+    width: 100%;
+    height: 255px;
+    object-fit: cover;
+}
+
+.delta-imovel-corpo {
+    padding: 22px;
+}
+
+.delta-tag {
+    display: inline-flex;
+    margin-bottom: 14px;
+    border-radius: 999px;
+    padding: 7px 11px;
+    color: var(--delta-azul-escuro);
+    background: #fff0e6;
+    font-size: 0.76rem;
+    font-weight: 800;
+}
+
+.delta-imovel-corpo p,
+.delta-servicos-grade p,
+.delta-sobre p,
+.delta-contato-info p {
+    color: var(--delta-texto-suave);
+    line-height: 1.65;
+}
+
+.delta-imovel-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 18px 0;
+}
+
+.delta-imovel-meta span {
+    border: 1px solid var(--delta-linha);
+    border-radius: 999px;
+    padding: 7px 10px;
+    color: var(--delta-texto-suave);
+    font-size: 0.82rem;
+    font-weight: 700;
+}
+
+.delta-imovel-corpo strong {
+    color: var(--delta-laranja-forte);
+    font-size: 1.2rem;
+}
+
+.delta-servicos {
+    background: var(--delta-branco);
+}
+
+.delta-servicos-grade article {
+    border-left: 4px solid var(--delta-laranja);
+    padding: 28px;
+    border-radius: 8px;
+    background: var(--delta-fundo);
+}
+
+.delta-servicos-grade span {
+    display: inline-block;
+    margin-bottom: 26px;
+    color: var(--delta-laranja);
+    font-weight: 800;
+}
+
+.delta-sobre,
+.delta-contato {
+    display: grid;
+    grid-template-columns: 0.95fr 1.05fr;
+    gap: 42px;
+    align-items: start;
+    padding: 92px clamp(20px, 5vw, 72px);
+}
+
+.delta-sobre {
+    color: var(--delta-branco);
+    background: var(--delta-azul-escuro);
+}
+
+.delta-sobre p {
+    color: rgba(255, 255, 255, 0.76);
+    font-size: 1.12rem;
+}
+
+.delta-contato {
+    background: var(--delta-fundo);
+}
+
+.delta-contato-info a {
+    display: inline-flex;
+    margin-top: 18px;
+    color: var(--delta-azul-escuro);
+    font-size: 1.35rem;
+    font-weight: 800;
+}
+
+.delta-contato-formulario {
+    display: grid;
+    gap: 16px;
+    padding: 28px;
+    border: 1px solid var(--delta-linha);
+    border-radius: 8px;
+    background: var(--delta-branco);
+    box-shadow: var(--delta-sombra);
+}
+
+.delta-rodape {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 28px clamp(20px, 5vw, 72px);
+    color: rgba(255, 255, 255, 0.75);
+    background: var(--delta-azul-profundo);
+}
+
+.delta-rodape p {
+    margin: 0;
+    color: var(--delta-branco);
+    font-weight: 800;
+}
+
+@media (max-width: 920px) {
+    .header-botao-menu {
+        display: block;
+    }
+
+    .header-navegacao {
+        position: fixed;
+        top: 78px;
+        right: 20px;
+        left: 20px;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        overflow: hidden;
+        border: 1px solid var(--delta-linha);
+        border-radius: 8px;
+        color: var(--delta-texto);
+        background: var(--delta-branco);
+        box-shadow: var(--delta-sombra);
+    }
+
+    .header-navegacao.header-navegacao-aberta {
+        display: flex;
+    }
+
+    .header-navegacao a {
+        padding: 18px;
+        border-bottom: 1px solid var(--delta-linha);
+    }
+
+    .header-navegacao a:last-child {
+        border-bottom: 0;
+    }
+
+    .delta-hero,
+    .delta-sobre,
+    .delta-contato {
+        grid-template-columns: 1fr;
+    }
+
+    .delta-hero {
+        align-items: start;
+        padding-top: 132px;
+    }
+
+    .delta-hero-conteudo {
+        padding-bottom: 0;
+    }
+
+    .delta-numeros,
+    .delta-imoveis-grade,
+    .delta-servicos-grade {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 620px) {
+    .header-site {
+        padding: 14px 18px;
+    }
+
+    .header-marca {
+        font-size: 0.94rem;
+    }
+
+    .header-marca-selo {
+        width: 38px;
+        height: 38px;
+    }
+
+    .delta-hero {
+        min-height: auto;
+        padding: 118px 18px 36px;
+    }
+
+    .delta-hero-acoes,
+    .delta-hero-acoes .delta-botao {
+        width: 100%;
+    }
+
+    .delta-busca-painel {
+        padding: 18px;
+    }
+
+    .delta-numeros,
+    .delta-imoveis-grade,
+    .delta-servicos-grade {
+        grid-template-columns: 1fr;
+    }
+
+    .delta-secao,
+    .delta-sobre,
+    .delta-contato {
+        padding: 64px 18px;
+    }
+
+    .delta-imovel-card img {
+        height: 220px;
+    }
+
+    .delta-contato-formulario {
+        padding: 18px;
+    }
+}

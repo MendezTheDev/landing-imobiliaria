@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Landing page responsiva para uma imobiliaria com imoveis em destaque, servicos e contato.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Delta Imóveis</title>
+</head>
+<body>
+    <header class="header-site" data-header-site>
+        <a class="header-marca" href="#inicio" aria-label="Morada Prime Imoveis">
+            <span class="header-marca-selo"><img src="https://www.deltaimoveis-rs.com.br/uploads/social.jpg" style="border-radius: 5px;" alt=""></span>
+            <span>Delta Imóveis</span>
+        </a>
+
+        <button class="header-botao-menu" type="button" aria-label="Abrir menu" aria-expanded="false" data-header-botao-menu>
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="header-navegacao" data-header-navegacao>
+            <a href="#imoveis">Imoveis</a>
+            <a href="#servicos">Servicos</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="delta-hero" id="inicio">
+            <div class="delta-hero-conteudo">
+                <p class="delta-etiqueta">Imobiliaria em Sao Paulo</p>
+                <h1>Encontre o imovel certo para viver melhor.</h1>
+                <p class="delta-hero-texto">Compra, venda e locacao com curadoria de oportunidades, atendimento consultivo e seguranca em cada etapa da negociacao.</p>
+                <div class="delta-hero-acoes">
+                    <a class="delta-botao delta-botao-principal" href="#imoveis">Ver imoveis</a>
+                    <a class="delta-botao delta-botao-secundario" href="#contato">Falar com consultor</a>
+                </div>
+            </div>
+
+            <form class="delta-busca-painel" aria-label="Buscar imoveis">
+                <label>
+                    Tipo
+                    <select>
+                        <option>Comprar</option>
+                        <option>Alugar</option>
+                    </select>
+                </label>
+                <label>
+                    Localizacao
+                    <input type="text" placeholder="Bairro ou cidade">
+                </label>
+                <label>
+                    Faixa de preco
+                    <select>
+                        <option>Ate R$ 600 mil</option>
+                        <option>R$ 600 mil a R$ 1 mi</option>
+                        <option>Acima de R$ 1 mi</option>
+                    </select>
+                </label>
+                <button class="delta-botao delta-botao-principal" type="submit">Buscar agora</button>
+            </form>
+        </section>
+
+        <section class="delta-numeros" aria-label="Numeros da imobiliaria">
+            <div>
+                <strong>12+</strong>
+                <span>anos de mercado</span>
+            </div>
+            <div>
+                <strong>840</strong>
+                <span>clientes atendidos</span>
+            </div>
+            <div>
+                <strong>320</strong>
+                <span>imoveis ativos</span>
+            </div>
+            <div>
+                <strong>98%</strong>
+                <span>de satisfacao</span>
+            </div>
+        </section>
+
+        <section class="delta-secao" id="imoveis">
+            <div class="delta-secao-cabecalho">
+                <p class="delta-etiqueta">Destaques</p>
+                <h2>Imoveis selecionados</h2>
+                <p>Opcoes prontas para morar, investir ou abrir uma nova fase com mais conforto.</p>
+            </div>
+
+            <div class="delta-imoveis-grade">
+                <article class="delta-imovel-card">
+                    <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=900&q=80" alt="Casa moderna com fachada clara">
+                    <div class="delta-imovel-corpo">
+                        <span class="delta-tag">Venda</span>
+                        <h3>Casa Jardim Europa</h3>
+                        <p>4 quartos, 3 suites, area gourmet e jardim privativo.</p>
+                        <div class="delta-imovel-meta">
+                            <span>320 m2</span>
+                            <span>4 dorm.</span>
+                            <span>3 vagas</span>
+                        </div>
+                        <strong>R$ 2.450.000</strong>
+                    </div>
+                </article>
+
+                <article class="delta-imovel-card">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80" alt="Sala ampla de apartamento sofisticado">
+                    <div class="delta-imovel-corpo">
+                        <span class="delta-tag">Locacao</span>
+                        <h3>Apartamento Vila Mariana</h3>
+                        <p>Planta inteligente, varanda integrada e lazer completo.</p>
+                        <div class="delta-imovel-meta">
+                            <span>92 m2</span>
+                            <span>2 dorm.</span>
+                            <span>2 vagas</span>
+                        </div>
+                        <strong>R$ 5.800/mes</strong>
+                    </div>
+                </article>
+
+                <article class="delta-imovel-card">
+                    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80" alt="Fachada de sobrado contemporaneo">
+                    <div class="delta-imovel-corpo">
+                        <span class="delta-tag">Venda</span>
+                        <h3>Sobrado Alto da Boa Vista</h3>
+                        <p>Ambientes iluminados, escritorio e suite master com closet.</p>
+                        <div class="delta-imovel-meta">
+                            <span>210 m2</span>
+                            <span>3 dorm.</span>
+                            <span>2 vagas</span>
+                        </div>
+                        <strong>R$ 1.390.000</strong>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="delta-secao delta-servicos" id="servicos">
+            <div class="delta-secao-cabecalho">
+                <p class="delta-etiqueta">Servicos</p>
+                <h2>Atendimento do inicio ao contrato</h2>
+            </div>
+
+            <div class="delta-servicos-grade">
+                <article>
+                    <span>01</span>
+                    <h3>Compra e venda</h3>
+                    <p>Avaliacao, divulgacao, visitas qualificadas e suporte documental.</p>
+                </article>
+                <article>
+                    <span>02</span>
+                    <h3>Locacao</h3>
+                    <p>Analise de perfil, garantias, vistoria e gestao de contrato.</p>
+                </article>
+                <article>
+                    <span>03</span>
+                    <h3>Consultoria</h3>
+                    <p>Orientacao para investidores e familias que buscam uma escolha segura.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="delta-sobre" id="sobre">
+            <div>
+                <p class="delta-etiqueta">Sobre nos</p>
+                <h2>Negociacoes transparentes, com olhar humano e criterio tecnico.</h2>
+            </div>
+            <p>A Delta imóveis combina conhecimento de mercado, tecnologia e acompanhamento proximo para encurtar o caminho entre voce e o imovel ideal.</p>
+        </section>
+
+        <section class="delta-contato" id="contato">
+            <div class="delta-contato-info">
+                <p class="delta-etiqueta">Contato</p>
+                <h2>Vamos conversar sobre seu proximo endereco?</h2>
+                <p>Envie seus dados e um consultor retorna com as melhores oportunidades para o seu perfil.</p>
+                <a href="tel:+5130412888">(51) 3041-2888</a>
+            </div>
+
+            <form class="delta-contato-formulario">
+                <label>
+                    Nome
+                    <input type="text" name="nome" placeholder="Seu nome" required>
+                </label>
+                <label>
+                    E-mail
+                    <input type="email" name="email" placeholder="voce@email.com" required>
+                </label>
+                <label>
+                    Interesse
+                    <select name="interesse">
+                        <option>Comprar imovel</option>
+                        <option>Alugar imovel</option>
+                        <option>Vender meu imovel</option>
+                    </select>
+                </label>
+                <label>
+                    Mensagem
+                    <textarea name="mensagem" rows="4" placeholder="Conte rapidamente o que procura"></textarea>
+                </label>
+                <button class="delta-botao delta-botao-principal" type="submit">Enviar mensagem</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="delta-rodape">
+        <p>Delta Imóveis</p>
+        <span>CRECI XXXXX | Cachoeirinha/RS</span>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
