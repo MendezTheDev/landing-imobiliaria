@@ -26,6 +26,7 @@ body {
     font-family: "Inter", Arial, sans-serif;
     color: var(--delta-texto);
     background: var(--delta-fundo);
+    scroll-behavior: smooth;
 }
 
 body.delta-menu-aberto {
